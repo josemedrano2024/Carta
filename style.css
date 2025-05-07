@@ -1,0 +1,110 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, #f3e5f5, #ce93d8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  perspective: 1000px;
+  width: 90vw;
+  height: 80vh;
+  max-width: 600px;
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  cursor: pointer;
+}
+
+.card.open {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.front {
+  background: #ffffff url("Miranda.jpg") no-repeat center/cover;
+  background-size: 51%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #6a1b9a;
+  font-weight: bold;
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4a148c;
+}
+
+.back h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.back p {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Media Queries for mobile screens */
+@media (max-width: 768px) {
+  .front {
+    font-size: 1.5em;
+  }
+
+  .back h1 {
+    font-size: 1.5em;
+  }
+
+  .back p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 85vw;
+    height: 70vh;
+  }
+
+  .front {
+    font-size: 1.2em;
+  }
+
+  .back h1 {
+    font-size: 1.4em;
+  }
+
+  .back p {
+    font-size: 0.9em;
+  }
+}
